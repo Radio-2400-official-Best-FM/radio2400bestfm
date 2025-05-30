@@ -1,0 +1,176 @@
+/* Teljes háttérkép */
+body {
+  background: url('Hatter1.jfif') no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 90px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Fekete menüsáv */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+}
+
+/* Menü konténer: logó + hamburger + menüpontok */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.logo img {
+  height: 90px;
+  pointer-events: none;       /* Ne lehessen kattintani vagy húzni */
+  user-select: none;          /* Ne lehessen kijelölni */
+  -webkit-user-drag: none;    /* Ne lehessen húzni (Safari/Chrome) */
+}
+
+/* Navigációs linkek - ASZTALI NÉZET */
+.nav-links {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Navigációs linkek stílusa */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #6DB544;
+}
+
+/* Hamburger ikon - alapból rejtve asztali nézetben */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  z-index: 1100;
+}
+
+/* Tartalomdoboz */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+  text-align: center;
+}
+
+.welcome-box {
+  background-color: rgba(255, 253, 253, 0.842);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(109, 181, 68, 0.7);
+  max-width: 600px;
+}
+
+.welcome-box h1 {
+  color: #589b31;
+  margin-bottom: 20px;
+}
+
+.welcome-box p {
+  font-size: 1.2rem;
+}
+
+/* Lábléc */
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #fffdfd;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+  /* Hamburger ikon megjelenítése */
+  .hamburger {
+    display: block;
+  }
+
+  /* Menü átalakítása mobilra */
+  .nav-links {
+    position: static;
+    transform: none;
+    width: 100%;
+    background-color: black;
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    padding: 10px 0;
+    gap: 20px;
+  }
+
+  /* Ha nyitva a mobil menü */
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* Új információs dobozok konténer */
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+/* Egyes buborékdobozok */
+.info-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(109, 181, 68, 0.5);
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-box h2 {
+  color: #589b31;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1rem;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(109, 181, 68, 0.6);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
